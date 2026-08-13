@@ -26,6 +26,13 @@ class FreeRuntimeTest(unittest.TestCase):
         source = (SOURCE / "update_heatmap.py").read_text(encoding="utf-8")
         self.assertIn('{"movie", "book"}', source)
 
+    def test_sync_workflows_do_not_run_heatmaps(self):
+        workflows = ROOT / ".github" / "workflows"
+        for workflow in workflows.glob("*.yml"):
+            source = workflow.read_text(encoding="utf-8")
+            self.assertNotIn("github_heatmap", source)
+            self.assertNotIn('heatmap "', source)
+
 
 if __name__ == "__main__":
     unittest.main()
