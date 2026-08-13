@@ -8,7 +8,6 @@ setup(
         "pendulum",
         "retrying",
         "notion-client",
-        "github-heatmap",
         "python-dotenv",
         "beautifulsoup4",
         "lxml",
@@ -16,7 +15,6 @@ setup(
     entry_points={
         "console_scripts": [
             "douban = douban2notion.douban:main",
-            "heatmap = douban2notion.update_heatmap:main",
         ],
     },
     author="malinkang",
