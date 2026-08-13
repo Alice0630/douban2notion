@@ -38,6 +38,7 @@ class NotionHelper:
     database_id_dict = {}
     image_dict = {}
     def __init__(self,type):
+        self.heatmap_block_id = None
         is_movie = True if type=="movie" else False
         page_url = os.getenv("NOTION_MOVIE_URL") if is_movie else os.getenv("NOTION_BOOK_URL")
         notion_token = os.getenv("NOTION_TOKEN")
